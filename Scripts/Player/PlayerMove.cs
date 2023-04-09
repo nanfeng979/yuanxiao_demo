@@ -18,6 +18,13 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if(PlayerStatusScript.instance.GetPlayerStatus() != PlayerStatus.Walk) {
+            anim.SetBool("Move", false);
+            anim.SetFloat("InputX", 0);
+            anim.SetFloat("InputY", 0);
+            return;
+        }
+
         InputX = Input.GetAxis("Horizontal");
         InputY = Input.GetAxis("Vertical");
 
@@ -30,7 +37,7 @@ public class PlayerMove : MonoBehaviour
             } else {
                 transform.Translate(new Vector2(0, InputY) * MoveSpeed * Time.deltaTime);
             }
-            
+
             anim.SetBool("Move", true);
         } else {
             anim.SetBool("Move", false);

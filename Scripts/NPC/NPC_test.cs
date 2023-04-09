@@ -12,13 +12,14 @@ public class NPC_test : MonoBehaviour
             // EnableTips();
             // EnableTalk(other.gameObject);
             EnableDialogueUI();
+            PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Dialogue);
         }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.name == "Player") {
-            DisableTips();
-            DisableTalk(other.gameObject);
+            // DisableTips();
+            // DisableTalk(other.gameObject);
         }
     }
 

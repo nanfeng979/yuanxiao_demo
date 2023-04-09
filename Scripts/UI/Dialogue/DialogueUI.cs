@@ -32,6 +32,7 @@ public class DialogueUI : MonoBehaviour
 
     public void HideDialogue() {
         gameObject.SetActive(false);
+        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Walk);
     }
 
     private void Init() {
