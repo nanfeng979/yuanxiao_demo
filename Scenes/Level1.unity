@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511965928}
   - component: {fileID: 511965927}
+  - component: {fileID: 511965929}
   m_Layer: 0
   m_Name: Tips
   m_TagString: Untagged
@@ -552,6 +553,19 @@ Transform:
   m_Father: {fileID: 1864291830}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511965929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511965926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806440855aa880f4a882d4cf8daa621d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueUI: {fileID: 525476735}
 --- !u!1 &525476735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1795,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tips: {fileID: 511965926}
-  DialogueUI: {fileID: 525476735}
 --- !u!61 &1864291832
 BoxCollider2D:
   m_ObjectHideFlags: 0

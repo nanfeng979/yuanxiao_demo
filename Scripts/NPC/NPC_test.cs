@@ -5,27 +5,23 @@ using UnityEngine;
 public class NPC_test : MonoBehaviour
 {
     public GameObject Tips;
-    public GameObject DialogueUI;
+    
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.name == "Player") {
-            // EnableTips();
-            // EnableTalk(other.gameObject);
-            EnableDialogueUI();
-            PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Dialogue);
+            EnableTips();
+            SetPlayerStatus(PlayerStatus.Dialogue);
         }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.name == "Player") {
-            // DisableTips();
-            // DisableTalk(other.gameObject);
+            DisableTips();
+            SetPlayerStatus(PlayerStatus.Walk);
         }
     }
 
-    private void EnableDialogueUI() {
-        DialogueUI.SetActive(true);
-    }
+    
 
     private void EnableTips() {
         Tips.SetActive(true);
@@ -35,11 +31,8 @@ public class NPC_test : MonoBehaviour
         Tips.SetActive(false);
     }
 
-    private void EnableTalk(GameObject obj) {
-        obj.GetComponent<Player>().canTalk();
+    private void SetPlayerStatus(PlayerStatus status) {
+        PlayerStatusScript.instance.SetPlayerStatus(status);
     }
 
-    private void DisableTalk(GameObject obj) {
-        obj.GetComponent<Player>().notTalk();
-    }
 }

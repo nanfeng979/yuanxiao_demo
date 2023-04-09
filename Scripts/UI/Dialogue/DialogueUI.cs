@@ -11,6 +11,12 @@ public class DialogueUI : MonoBehaviour
     private int maxPlotNumber = 0;
     private int currentLine = 0;
 
+    void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            HideDialogue();
+        }
+    }
+
 
     private void OnEnable() {
         Init();
