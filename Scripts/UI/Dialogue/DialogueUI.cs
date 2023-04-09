@@ -11,6 +11,7 @@ public class DialogueUI : MonoBehaviour
     private int maxPlotNumber = 0;
     private int currentLine = 0;
 
+
     void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             HideDialogue();
@@ -21,6 +22,11 @@ public class DialogueUI : MonoBehaviour
     private void OnEnable() {
         Init();
         ShowDialogue();
+        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Dialogue);
+    }
+
+    private void OnDisable() {
+        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Walk);
     }
 
 
@@ -38,7 +44,6 @@ public class DialogueUI : MonoBehaviour
 
     public void HideDialogue() {
         gameObject.SetActive(false);
-        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Walk);
     }
 
     private void Init() {

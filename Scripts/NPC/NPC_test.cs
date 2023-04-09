@@ -10,14 +10,12 @@ public class NPC_test : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.name == "Player") {
             EnableTips();
-            SetPlayerStatus(PlayerStatus.Dialogue);
         }
     }
 
     private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.name == "Player") {
             DisableTips();
-            SetPlayerStatus(PlayerStatus.Walk);
         }
     }
 
@@ -29,10 +27,6 @@ public class NPC_test : MonoBehaviour
 
     private void DisableTips() {
         Tips.SetActive(false);
-    }
-
-    private void SetPlayerStatus(PlayerStatus status) {
-        PlayerStatusScript.instance.SetPlayerStatus(status);
     }
 
 }
