@@ -1,18 +1,18 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct DialogueStructNameAndContent {
-    public string characterNames;
-    public string dialogueContent;
-    public Sprite characterSprite;
-    public string characterPosition;
+public struct DialogueStruct {
+    public string characterName;
+    public string characterDialogueContent;
+    public Sprite characterImage;
+    public string characterImagePosition;
 }
 
 [CreateAssetMenu(fileName = "NewDialogueDatabase", menuName = "Dialogue System/Dialogue Database")]
 public class DialogueDatabase : ScriptableObject
 {
-    [SerializeField] private DialogueStructNameAndContent[] nameAndContent;
+    [SerializeField] private DialogueStruct[] dialogue;
 
-    public DialogueStructNameAndContent[] NameAndContent => nameAndContent;
+    public DialogueStruct[] Dialogue => dialogue;
 
 }

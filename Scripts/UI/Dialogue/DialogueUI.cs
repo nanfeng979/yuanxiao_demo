@@ -5,8 +5,8 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private DialogueDatabase[] dialogueDatabase;
-    [SerializeField] private TMP_Text characterNameText;
-    [SerializeField] private TMP_Text dialogueLineText;
+    [SerializeField] private TMP_Text characterName;
+    [SerializeField] private TMP_Text characterDialogueContent;
     [SerializeField] private GameObject characterSpriteLeft;
     [SerializeField] private GameObject characterSpriteRight;
 
@@ -34,23 +34,27 @@ public class DialogueUI : MonoBehaviour
 
 
     public void ShowDialogue() {
-        if(currentLine >= dialogueDatabase[currentPlot].NameAndContent.Length) {
+        if(currentLine >= dialogueDatabase[currentPlot].Dialogue.Length) {
             HideDialogue();
             return;
         }
 
-        characterNameText.text = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterNames;
-        dialogueLineText.text = dialogueDatabase[currentPlot].NameAndContent[currentLine].dialogueContent;
-        if(dialogueDatabase[currentPlot].NameAndContent[currentLine].characterPosition == "Left") {
-            characterSpriteLeft.GetComponent<Image>().sprite = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterSprite;
+        DialogueStruct currentDialogue = dialogueDatabase[currentPlot].Dialogue[currentLine];
+
+        characterName.text = currentDialogue.characterName;
+        characterDialogueContent.text = currentDialogue.characterDialogueContent;
+        if(currentDialogue.characterImagePosition == "Left") {
+            characterSpriteLeft.GetComponent<Image>().sprite = currentDialogue.characterImage;
             characterSpriteLeft.SetActive(true);
             characterSpriteRight.SetActive(false);
-        } else {
-            characterSpriteRight.GetComponent<Image>().sprite = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterSprite;
+        } else if(currentDialogue.characterImagePosition == "Right") {
+            characterSpriteRight.GetComponent<Image>().sprite = currentDialogue.characterImage;
             characterSpriteLeft.SetActive(false);
             characterSpriteRight.SetActive(true);
+        } else {
+            characterSpriteLeft.SetActive(false);
+            characterSpriteRight.SetActive(false);
         }
-
 
         currentLine++;
     }
