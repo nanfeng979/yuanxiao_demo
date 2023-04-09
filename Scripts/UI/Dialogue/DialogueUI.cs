@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueUI : MonoBehaviour
@@ -6,6 +7,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private DialogueDatabase[] dialogueDatabase;
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private TMP_Text dialogueLineText;
+    [SerializeField] private GameObject characterSpriteLeft;
+    [SerializeField] private GameObject characterSpriteRight;
 
     private int currentPlot = 0;
     private int maxPlotNumber = 0;
@@ -38,7 +41,17 @@ public class DialogueUI : MonoBehaviour
 
         characterNameText.text = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterNames;
         dialogueLineText.text = dialogueDatabase[currentPlot].NameAndContent[currentLine].dialogueContent;
-        
+        if(dialogueDatabase[currentPlot].NameAndContent[currentLine].characterPosition == "Left") {
+            characterSpriteLeft.GetComponent<Image>().sprite = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterSprite;
+            characterSpriteLeft.SetActive(true);
+            characterSpriteRight.SetActive(false);
+        } else {
+            characterSpriteRight.GetComponent<Image>().sprite = dialogueDatabase[currentPlot].NameAndContent[currentLine].characterSprite;
+            characterSpriteLeft.SetActive(false);
+            characterSpriteRight.SetActive(true);
+        }
+
+
         currentLine++;
     }
 

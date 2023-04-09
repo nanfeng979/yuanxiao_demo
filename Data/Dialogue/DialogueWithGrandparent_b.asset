@@ -15,3 +15,5 @@ MonoBehaviour:
   nameAndContent:
   - characterNames: Me
     dialogueContent: 123
+    characterSprite: {fileID: 21300000, guid: a6874f4a2745af0419ff72ad478182b0, type: 3}
+    characterPosition: Left
