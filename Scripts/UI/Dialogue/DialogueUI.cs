@@ -28,11 +28,6 @@ public class DialogueUI : MonoBehaviour
         PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Dialogue);
     }
 
-    private void OnDisable() {
-        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Walk);
-    }
-
-
     public void ShowDialogue() {
         if(currentLine >= dialogueDatabase[currentPlot].Dialogue.Length) {
             HideDialogue();
@@ -61,6 +56,7 @@ public class DialogueUI : MonoBehaviour
 
     public void HideDialogue() {
         gameObject.SetActive(false);
+        PlayerStatusScript.instance.SetPlayerStatus(PlayerStatus.Walk);
     }
 
     private void Init() {

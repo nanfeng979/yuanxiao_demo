@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 525476737}
   - component: {fileID: 525476740}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: DialogueUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,11 +623,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueDatabase:
-  - {fileID: 11400000, guid: 686d87a2edef49845878222a5b154371, type: 2}
   - {fileID: 11400000, guid: a708a91c08f307a43886cd7b2014107d, type: 2}
-  - {fileID: 11400000, guid: fbc56cea10fc3bd45b4031d8eef09ffa, type: 2}
-  characterNameText: {fileID: 484209188}
-  dialogueLineText: {fileID: 1668217924}
+  - {fileID: 11400000, guid: a708a91c08f307a43886cd7b2014107d, type: 2}
+  - {fileID: 11400000, guid: a708a91c08f307a43886cd7b2014107d, type: 2}
+  characterName: {fileID: 484209188}
+  characterDialogueContent: {fileID: 1668217924}
   characterSpriteLeft: {fileID: 2101306442}
   characterSpriteRight: {fileID: 1394677625}
 --- !u!114 &525476738
@@ -755,7 +755,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1281789454}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 634346740}
   - component: {fileID: 634346739}
   m_Layer: 5
-  m_Name: Response
+  m_Name: CharacterDialogueContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -994,7 +994,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1281789454}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1353,8 +1353,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 577961092}
   - {fileID: 911817111}
+  - {fileID: 577961092}
   - {fileID: 525476736}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 1394677628}
   - component: {fileID: 1394677627}
   m_Layer: 5
-  m_Name: Sprite_right
+  m_Name: CharacterImageByRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 2101306445}
   - component: {fileID: 2101306444}
   m_Layer: 5
-  m_Name: Sprite_left
+  m_Name: CharacterImageByLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
